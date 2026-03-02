@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html { scroll-behavior: smooth; }
+
+/* Article prose */
+.prose h2 { @apply text-2xl font-bold mt-10 mb-4 text-gray-900; }
+.prose h3 { @apply text-xl font-semibold mt-8 mb-3 text-gray-800; }
+.prose p { @apply text-gray-700 leading-relaxed mb-4; }
+.prose ul { @apply list-disc pl-6 mb-4 space-y-1 text-gray-700; }
+.prose ol { @apply list-decimal pl-6 mb-4 space-y-1 text-gray-700; }
+.prose a { @apply text-blue-600 underline hover:text-blue-800; }

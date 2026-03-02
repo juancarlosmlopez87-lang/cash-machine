@@ -1,0 +1,256 @@
+{
+  "pending": [
+    {
+      "keyword": "mejor freidora de aire",
+      "category": "Hogar",
+      "priority": 1
+    },
+    {
+      "keyword": "mejor smartwatch",
+      "category": "Tecnologia",
+      "priority": 1
+    },
+    {
+      "keyword": "mejor colchon calidad precio",
+      "category": "Hogar",
+      "priority": 1
+    },
+    {
+      "keyword": "mejor movil calidad precio",
+      "category": "Tecnologia",
+      "priority": 1
+    },
+    {
+      "keyword": "mejor auriculares bluetooth",
+      "category": "Tecnologia",
+      "priority": 2
+    },
+    {
+      "keyword": "mejor aspirador escoba",
+      "category": "Hogar",
+      "priority": 2
+    },
+    {
+      "keyword": "mejor tablet para estudiar",
+      "category": "Tecnologia",
+      "priority": 2
+    },
+    {
+      "keyword": "mejor cafetera express",
+      "category": "Hogar",
+      "priority": 2
+    },
+    {
+      "keyword": "mejor monitor para trabajar",
+      "category": "Tecnologia",
+      "priority": 2
+    },
+    {
+      "keyword": "mejor teclado mecanico",
+      "category": "Gaming",
+      "priority": 2
+    },
+    {
+      "keyword": "mejor raton gaming",
+      "category": "Gaming",
+      "priority": 2
+    },
+    {
+      "keyword": "mejor patinete electrico",
+      "category": "Deporte",
+      "priority": 2
+    },
+    {
+      "keyword": "mejor bicicleta estatica",
+      "category": "Deporte",
+      "priority": 2
+    },
+    {
+      "keyword": "mejor silla de oficina ergonomica",
+      "category": "Hogar",
+      "priority": 2
+    },
+    {
+      "keyword": "mejor router wifi",
+      "category": "Tecnologia",
+      "priority": 2
+    },
+    {
+      "keyword": "mejor kindle o ebook",
+      "category": "Tecnologia",
+      "priority": 2
+    },
+    {
+      "keyword": "mejor camara de vigilancia",
+      "category": "Hogar",
+      "priority": 2
+    },
+    {
+      "keyword": "mejor almohada cervical",
+      "category": "Hogar",
+      "priority": 2
+    },
+    {
+      "keyword": "mejor escritorio elevable",
+      "category": "Hogar",
+      "priority": 2
+    },
+    {
+      "keyword": "mejor cinta de correr",
+      "category": "Deporte",
+      "priority": 3
+    },
+    {
+      "keyword": "mejor proyector barato",
+      "category": "Tecnologia",
+      "priority": 3
+    },
+    {
+      "keyword": "mejor altavoz bluetooth",
+      "category": "Tecnologia",
+      "priority": 3
+    },
+    {
+      "keyword": "mejor power bank",
+      "category": "Tecnologia",
+      "priority": 3
+    },
+    {
+      "keyword": "mejor disco duro externo",
+      "category": "Tecnologia",
+      "priority": 3
+    },
+    {
+      "keyword": "mejor webcam para videoconferencias",
+      "category": "Tecnologia",
+      "priority": 3
+    },
+    {
+      "keyword": "mejor maquina de cafe de capsulas",
+      "category": "Hogar",
+      "priority": 3
+    },
+    {
+      "keyword": "mejor purificador de aire",
+      "category": "Hogar",
+      "priority": 3
+    },
+    {
+      "keyword": "mejor humidificador",
+      "category": "Hogar",
+      "priority": 3
+    },
+    {
+      "keyword": "mejor plancha de pelo",
+      "category": "Belleza",
+      "priority": 3
+    },
+    {
+      "keyword": "mejor secador de pelo",
+      "category": "Belleza",
+      "priority": 3
+    },
+    {
+      "keyword": "mejor batidora de vaso",
+      "category": "Hogar",
+      "priority": 3
+    },
+    {
+      "keyword": "mejor microondas",
+      "category": "Hogar",
+      "priority": 3
+    },
+    {
+      "keyword": "mejor ventilador de torre",
+      "category": "Hogar",
+      "priority": 3
+    },
+    {
+      "keyword": "mejor deshumidificador",
+      "category": "Hogar",
+      "priority": 3
+    },
+    {
+      "keyword": "mejor bascula inteligente",
+      "category": "Deporte",
+      "priority": 3
+    },
+    {
+      "keyword": "mejor camiseta termica",
+      "category": "Deporte",
+      "priority": 3
+    },
+    {
+      "keyword": "mejor mochila para portatil",
+      "category": "Tecnologia",
+      "priority": 3
+    },
+    {
+      "keyword": "mejor impresora para casa",
+      "category": "Tecnologia",
+      "priority": 3
+    },
+    {
+      "keyword": "mejor vigilabebes",
+      "category": "Hogar",
+      "priority": 3
+    },
+    {
+      "keyword": "mejor cerradura inteligente",
+      "category": "Hogar",
+      "priority": 3
+    },
+    {
+      "keyword": "mejor aspirador de mano",
+      "category": "Hogar",
+      "priority": 3
+    },
+    {
+      "keyword": "mejor cortapelos",
+      "category": "Belleza",
+      "priority": 3
+    },
+    {
+      "keyword": "mejor afeitadora electrica",
+      "category": "Belleza",
+      "priority": 3
+    },
+    {
+      "keyword": "mejor cepillo de dientes electrico",
+      "category": "Belleza",
+      "priority": 3
+    },
+    {
+      "keyword": "mejor maquina de hielo",
+      "category": "Hogar",
+      "priority": 3
+    },
+    {
+      "keyword": "mejor sarten antiadherente",
+      "category": "Hogar",
+      "priority": 3
+    },
+    {
+      "keyword": "mejor olla programable",
+      "category": "Hogar",
+      "priority": 3
+    }
+  ],
+  "done": [
+    {
+      "keyword": "mejor robot aspirador",
+      "category": "Hogar",
+      "priority": 1
+    },
+    {
+      "keyword": "mejor portatil calidad precio",
+      "category": "Tecnologia",
+      "priority": 1
+    },
+    {
+      "keyword": "mejor silla gaming",
+      "category": "Gaming",
+      "priority": 1
+    }
+  ]
+}
