@@ -1,21 +1,6 @@
 {
   "pending": [
     {
-      "keyword": "mejor freidora de aire",
-      "category": "Hogar",
-      "priority": 1
-    },
-    {
-      "keyword": "mejor smartwatch",
-      "category": "Tecnologia",
-      "priority": 1
-    },
-    {
-      "keyword": "mejor colchon calidad precio",
-      "category": "Hogar",
-      "priority": 1
-    },
-    {
       "keyword": "mejor movil calidad precio",
       "category": "Tecnologia",
       "priority": 1
@@ -250,6 +235,21 @@
     {
       "keyword": "mejor silla gaming",
       "category": "Gaming",
+      "priority": 1
+    },
+    {
+      "keyword": "mejor freidora de aire",
+      "category": "Hogar",
+      "priority": 1
+    },
+    {
+      "keyword": "mejor smartwatch",
+      "category": "Tecnologia",
+      "priority": 1
+    },
+    {
+      "keyword": "mejor colchon calidad precio",
+      "category": "Hogar",
       "priority": 1
     }
   ]
