@@ -57,6 +57,11 @@ export default function RootLayout({
               {SITE.name} participa en el Programa de Afiliados de Amazon EU.
               Al comprar a traves de nuestros enlaces, ganamos una pequena comision sin coste adicional para ti.
             </p>
+            <div className="flex justify-center gap-4 mb-3">
+              <a href="/privacidad/" className="hover:text-gray-700 underline">Politica de Privacidad</a>
+              <span>·</span>
+              <a href="/contacto/" className="hover:text-gray-700 underline">Contacto</a>
+            </div>
             <p>&copy; {new Date().getFullYear()} {SITE.name}. Todos los derechos reservados.</p>
           </div>
         </footer>
