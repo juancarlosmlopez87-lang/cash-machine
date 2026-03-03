@@ -1,31 +1,6 @@
 {
   "pending": [
     {
-      "keyword": "mejor aspiradora sin cable Dyson alternativa",
-      "category": "Hogar",
-      "priority": 1
-    },
-    {
-      "keyword": "mejor aire acondicionado portatil",
-      "category": "Hogar",
-      "priority": 1
-    },
-    {
-      "keyword": "mejor robot de cocina",
-      "category": "Hogar",
-      "priority": 1
-    },
-    {
-      "keyword": "mejor lavadora calidad precio",
-      "category": "Hogar",
-      "priority": 1
-    },
-    {
-      "keyword": "mejor consola gaming 2026",
-      "category": "Gaming",
-      "priority": 1
-    },
-    {
       "keyword": "mejor monitor gaming 144hz",
       "category": "Gaming",
       "priority": 1
@@ -795,6 +770,31 @@
     {
       "keyword": "mejor televisor 4k calidad precio",
       "category": "Tecnologia",
+      "priority": 1
+    },
+    {
+      "keyword": "mejor aspiradora sin cable Dyson alternativa",
+      "category": "Hogar",
+      "priority": 1
+    },
+    {
+      "keyword": "mejor aire acondicionado portatil",
+      "category": "Hogar",
+      "priority": 1
+    },
+    {
+      "keyword": "mejor robot de cocina",
+      "category": "Hogar",
+      "priority": 1
+    },
+    {
+      "keyword": "mejor lavadora calidad precio",
+      "category": "Hogar",
+      "priority": 1
+    },
+    {
+      "keyword": "mejor consola gaming 2026",
+      "category": "Gaming",
       "priority": 1
     }
   ]
