@@ -57,6 +57,3 @@ export function getAllSlugs(): string[] {
     .map((f) => f.replace(".json", ""));
 }
 
-export function amazonLink(asin: string, tag: string): string {
-  return `https://www.amazon.es/dp/${asin}?tag=${tag}&linkCode=ogi&th=1`;
-}
