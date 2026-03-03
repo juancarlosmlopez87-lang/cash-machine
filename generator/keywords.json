@@ -1,31 +1,6 @@
 {
   "pending": [
     {
-      "keyword": "mejor camara de fotos mirrorless",
-      "category": "Tecnologia",
-      "priority": 1
-    },
-    {
-      "keyword": "mejor drone con camara",
-      "category": "Tecnologia",
-      "priority": 1
-    },
-    {
-      "keyword": "mejor auriculares con cancelacion de ruido",
-      "category": "Tecnologia",
-      "priority": 1
-    },
-    {
-      "keyword": "mejor smart TV 55 pulgadas",
-      "category": "Tecnologia",
-      "priority": 1
-    },
-    {
-      "keyword": "mejor barra de sonido",
-      "category": "Tecnologia",
-      "priority": 1
-    },
-    {
       "keyword": "mejor patin electrico para adultos",
       "category": "Deporte",
       "priority": 1
@@ -795,6 +770,31 @@
     {
       "keyword": "mejor calefactor bajo consumo",
       "category": "Hogar",
+      "priority": 1
+    },
+    {
+      "keyword": "mejor camara de fotos mirrorless",
+      "category": "Tecnologia",
+      "priority": 1
+    },
+    {
+      "keyword": "mejor drone con camara",
+      "category": "Tecnologia",
+      "priority": 1
+    },
+    {
+      "keyword": "mejor auriculares con cancelacion de ruido",
+      "category": "Tecnologia",
+      "priority": 1
+    },
+    {
+      "keyword": "mejor smart TV 55 pulgadas",
+      "category": "Tecnologia",
+      "priority": 1
+    },
+    {
+      "keyword": "mejor barra de sonido",
+      "category": "Tecnologia",
       "priority": 1
     }
   ]
