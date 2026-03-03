@@ -1,6 +1,116 @@
 {
   "pending": [
     {
+      "keyword": "mejor aspiradora sin cable Dyson alternativa",
+      "category": "Hogar",
+      "priority": 1
+    },
+    {
+      "keyword": "mejor aire acondicionado portatil",
+      "category": "Hogar",
+      "priority": 1
+    },
+    {
+      "keyword": "mejor robot de cocina",
+      "category": "Hogar",
+      "priority": 1
+    },
+    {
+      "keyword": "mejor lavadora calidad precio",
+      "category": "Hogar",
+      "priority": 1
+    },
+    {
+      "keyword": "mejor consola gaming 2026",
+      "category": "Gaming",
+      "priority": 1
+    },
+    {
+      "keyword": "mejor monitor gaming 144hz",
+      "category": "Gaming",
+      "priority": 1
+    },
+    {
+      "keyword": "mejor tarjeta grafica calidad precio",
+      "category": "Gaming",
+      "priority": 1
+    },
+    {
+      "keyword": "mejor zapatillas running",
+      "category": "Deporte",
+      "priority": 1
+    },
+    {
+      "keyword": "mejor reloj GPS running",
+      "category": "Deporte",
+      "priority": 1
+    },
+    {
+      "keyword": "mejor crema hidratante facial",
+      "category": "Belleza",
+      "priority": 1
+    },
+    {
+      "keyword": "mejor serum vitamina C",
+      "category": "Belleza",
+      "priority": 1
+    },
+    {
+      "keyword": "mejor protector solar facial",
+      "category": "Belleza",
+      "priority": 1
+    },
+    {
+      "keyword": "mejor depiladora laser",
+      "category": "Belleza",
+      "priority": 1
+    },
+    {
+      "keyword": "mejor aspirador robot con fregado",
+      "category": "Hogar",
+      "priority": 1
+    },
+    {
+      "keyword": "mejor calefactor bajo consumo",
+      "category": "Hogar",
+      "priority": 1
+    },
+    {
+      "keyword": "mejor camara de fotos mirrorless",
+      "category": "Tecnologia",
+      "priority": 1
+    },
+    {
+      "keyword": "mejor drone con camara",
+      "category": "Tecnologia",
+      "priority": 1
+    },
+    {
+      "keyword": "mejor auriculares con cancelacion de ruido",
+      "category": "Tecnologia",
+      "priority": 1
+    },
+    {
+      "keyword": "mejor smart TV 55 pulgadas",
+      "category": "Tecnologia",
+      "priority": 1
+    },
+    {
+      "keyword": "mejor barra de sonido",
+      "category": "Tecnologia",
+      "priority": 1
+    },
+    {
+      "keyword": "mejor patin electrico para adultos",
+      "category": "Deporte",
+      "priority": 1
+    },
+    {
+      "keyword": "mejor bicicleta electrica",
+      "category": "Deporte",
+      "priority": 1
+    },
+    {
       "keyword": "mejor tablet para estudiar",
       "category": "Tecnologia",
       "priority": 2
@@ -68,140 +178,550 @@
     {
       "keyword": "mejor cinta de correr",
       "category": "Deporte",
-      "priority": 3
+      "priority": 2
     },
     {
       "keyword": "mejor proyector barato",
       "category": "Tecnologia",
-      "priority": 3
+      "priority": 2
     },
     {
       "keyword": "mejor altavoz bluetooth",
       "category": "Tecnologia",
-      "priority": 3
+      "priority": 2
     },
     {
       "keyword": "mejor power bank",
       "category": "Tecnologia",
-      "priority": 3
+      "priority": 2
     },
     {
       "keyword": "mejor disco duro externo",
       "category": "Tecnologia",
-      "priority": 3
+      "priority": 2
     },
     {
       "keyword": "mejor webcam para videoconferencias",
       "category": "Tecnologia",
-      "priority": 3
+      "priority": 2
     },
     {
       "keyword": "mejor maquina de cafe de capsulas",
       "category": "Hogar",
-      "priority": 3
+      "priority": 2
     },
     {
       "keyword": "mejor purificador de aire",
       "category": "Hogar",
-      "priority": 3
+      "priority": 2
     },
     {
       "keyword": "mejor humidificador",
       "category": "Hogar",
-      "priority": 3
+      "priority": 2
     },
     {
       "keyword": "mejor plancha de pelo",
       "category": "Belleza",
-      "priority": 3
+      "priority": 2
     },
     {
       "keyword": "mejor secador de pelo",
       "category": "Belleza",
-      "priority": 3
+      "priority": 2
     },
     {
       "keyword": "mejor batidora de vaso",
       "category": "Hogar",
-      "priority": 3
+      "priority": 2
     },
     {
       "keyword": "mejor microondas",
       "category": "Hogar",
-      "priority": 3
+      "priority": 2
     },
     {
       "keyword": "mejor ventilador de torre",
       "category": "Hogar",
-      "priority": 3
+      "priority": 2
     },
     {
       "keyword": "mejor deshumidificador",
       "category": "Hogar",
-      "priority": 3
+      "priority": 2
     },
     {
       "keyword": "mejor bascula inteligente",
       "category": "Deporte",
-      "priority": 3
+      "priority": 2
     },
     {
       "keyword": "mejor camiseta termica",
       "category": "Deporte",
-      "priority": 3
+      "priority": 2
     },
     {
       "keyword": "mejor mochila para portatil",
       "category": "Tecnologia",
-      "priority": 3
+      "priority": 2
     },
     {
       "keyword": "mejor impresora para casa",
       "category": "Tecnologia",
-      "priority": 3
+      "priority": 2
     },
     {
       "keyword": "mejor vigilabebes",
-      "category": "Hogar",
-      "priority": 3
+      "category": "Bebe",
+      "priority": 2
     },
     {
       "keyword": "mejor cerradura inteligente",
       "category": "Hogar",
-      "priority": 3
+      "priority": 2
     },
     {
       "keyword": "mejor aspirador de mano",
       "category": "Hogar",
-      "priority": 3
+      "priority": 2
     },
     {
       "keyword": "mejor cortapelos",
       "category": "Belleza",
-      "priority": 3
+      "priority": 2
     },
     {
       "keyword": "mejor afeitadora electrica",
       "category": "Belleza",
-      "priority": 3
+      "priority": 2
     },
     {
       "keyword": "mejor cepillo de dientes electrico",
       "category": "Belleza",
-      "priority": 3
+      "priority": 2
     },
     {
       "keyword": "mejor maquina de hielo",
       "category": "Hogar",
-      "priority": 3
+      "priority": 2
     },
     {
       "keyword": "mejor sarten antiadherente",
       "category": "Hogar",
-      "priority": 3
+      "priority": 2
     },
     {
       "keyword": "mejor olla programable",
+      "category": "Hogar",
+      "priority": 2
+    },
+    {
+      "keyword": "mejor trona para bebe",
+      "category": "Bebe",
+      "priority": 2
+    },
+    {
+      "keyword": "mejor cuna colecho",
+      "category": "Bebe",
+      "priority": 2
+    },
+    {
+      "keyword": "mejor sacaleches electrico",
+      "category": "Bebe",
+      "priority": 2
+    },
+    {
+      "keyword": "mejor mochila portabebes",
+      "category": "Bebe",
+      "priority": 2
+    },
+    {
+      "keyword": "mejor arenero autolimpiable",
+      "category": "Mascotas",
+      "priority": 2
+    },
+    {
+      "keyword": "mejor cama para perro",
+      "category": "Mascotas",
+      "priority": 2
+    },
+    {
+      "keyword": "mejor transportin para gato",
+      "category": "Mascotas",
+      "priority": 2
+    },
+    {
+      "keyword": "mejor arnes antitirones perro",
+      "category": "Mascotas",
+      "priority": 2
+    },
+    {
+      "keyword": "mejor comedero automatico",
+      "category": "Mascotas",
+      "priority": 2
+    },
+    {
+      "keyword": "mejor fuente de agua para gato",
+      "category": "Mascotas",
+      "priority": 2
+    },
+    {
+      "keyword": "mejor GPS para perro",
+      "category": "Mascotas",
+      "priority": 2
+    },
+    {
+      "keyword": "mejor lavavajillas compacto",
+      "category": "Hogar",
+      "priority": 2
+    },
+    {
+      "keyword": "mejor horno electrico sobremesa",
+      "category": "Hogar",
+      "priority": 2
+    },
+    {
+      "keyword": "mejor plancha de ropa a vapor",
+      "category": "Hogar",
+      "priority": 2
+    },
+    {
+      "keyword": "mejor mando para PC",
+      "category": "Gaming",
+      "priority": 2
+    },
+    {
+      "keyword": "mejor auriculares gaming",
+      "category": "Gaming",
+      "priority": 2
+    },
+    {
+      "keyword": "mejor micro para streaming",
+      "category": "Gaming",
+      "priority": 2
+    },
+    {
+      "keyword": "mejor SSD para gaming",
+      "category": "Gaming",
+      "priority": 2
+    },
+    {
+      "keyword": "mejor eliptica para casa",
+      "category": "Deporte",
+      "priority": 2
+    },
+    {
+      "keyword": "mejor banco de musculacion",
+      "category": "Deporte",
+      "priority": 2
+    },
+    {
+      "keyword": "mejor mancuernas ajustables",
+      "category": "Deporte",
+      "priority": 2
+    },
+    {
+      "keyword": "mejor pulsometro",
+      "category": "Deporte",
+      "priority": 2
+    },
+    {
+      "keyword": "mejor maquina de remo",
+      "category": "Deporte",
+      "priority": 2
+    },
+    {
+      "keyword": "mejor rizador de pelo",
+      "category": "Belleza",
+      "priority": 2
+    },
+    {
+      "keyword": "mejor masajeador facial",
+      "category": "Belleza",
+      "priority": 2
+    },
+    {
+      "keyword": "mejor contorno de ojos",
+      "category": "Belleza",
+      "priority": 2
+    },
+    {
+      "keyword": "mejor cafetera italiana",
+      "category": "Hogar",
+      "priority": 2
+    },
+    {
+      "keyword": "mejor envasadora al vacio",
+      "category": "Hogar",
+      "priority": 2
+    },
+    {
+      "keyword": "mejor cortacesped electrico",
+      "category": "Hogar",
+      "priority": 2
+    },
+    {
+      "keyword": "mejor hidrolimpiadora",
+      "category": "Hogar",
+      "priority": 2
+    },
+    {
+      "keyword": "mejor radiador de aceite",
+      "category": "Hogar",
+      "priority": 2
+    },
+    {
+      "keyword": "mejor estufa de pellets",
+      "category": "Hogar",
+      "priority": 2
+    },
+    {
+      "keyword": "mejor hub USB-C",
+      "category": "Tecnologia",
+      "priority": 2
+    },
+    {
+      "keyword": "mejor teclado bluetooth",
+      "category": "Tecnologia",
+      "priority": 2
+    },
+    {
+      "keyword": "mejor raton ergonomico",
+      "category": "Tecnologia",
+      "priority": 2
+    },
+    {
+      "keyword": "mejor memoria RAM DDR5",
+      "category": "Tecnologia",
+      "priority": 2
+    },
+    {
+      "keyword": "mejor NAS para casa",
+      "category": "Tecnologia",
+      "priority": 2
+    },
+    {
+      "keyword": "mejor repetidor wifi",
+      "category": "Tecnologia",
+      "priority": 2
+    },
+    {
+      "keyword": "mejor bombilla inteligente",
+      "category": "Tecnologia",
+      "priority": 2
+    },
+    {
+      "keyword": "mejor enchufe inteligente",
+      "category": "Tecnologia",
+      "priority": 2
+    },
+    {
+      "keyword": "mejor asistente de voz Alexa vs Google",
+      "category": "Tecnologia",
+      "priority": 2
+    },
+    {
+      "keyword": "mejor bicicleta plegable",
+      "category": "Deporte",
+      "priority": 2
+    },
+    {
+      "keyword": "mejor silla para estudiar",
+      "category": "Hogar",
+      "priority": 2
+    },
+    {
+      "keyword": "mejor sabanas calidad precio",
+      "category": "Hogar",
+      "priority": 2
+    },
+    {
+      "keyword": "mejor edredon de plumas",
+      "category": "Hogar",
+      "priority": 2
+    },
+    {
+      "keyword": "mejor aspirador de colchon antiácaros",
+      "category": "Hogar",
+      "priority": 2
+    },
+    {
+      "keyword": "mejor cuchillo de cocina",
+      "category": "Hogar",
+      "priority": 2
+    },
+    {
+      "keyword": "mejor juego de ollas",
+      "category": "Hogar",
+      "priority": 2
+    },
+    {
+      "keyword": "mejor hamaca para bebe",
+      "category": "Bebe",
+      "priority": 3
+    },
+    {
+      "keyword": "mejor esterilizador de biberones",
+      "category": "Bebe",
+      "priority": 3
+    },
+    {
+      "keyword": "mejor cambiador de bebe",
+      "category": "Bebe",
+      "priority": 3
+    },
+    {
+      "keyword": "mejor bañera bebe",
+      "category": "Bebe",
+      "priority": 3
+    },
+    {
+      "keyword": "mejor cortauñas para perro",
+      "category": "Mascotas",
+      "priority": 3
+    },
+    {
+      "keyword": "mejor sandwichera y grill",
+      "category": "Hogar",
+      "priority": 3
+    },
+    {
+      "keyword": "mejor tostadora",
+      "category": "Hogar",
+      "priority": 3
+    },
+    {
+      "keyword": "mejor hervidor electrico",
+      "category": "Hogar",
+      "priority": 3
+    },
+    {
+      "keyword": "mejor tabla de planchar",
+      "category": "Hogar",
+      "priority": 3
+    },
+    {
+      "keyword": "mejor tendedero plegable",
+      "category": "Hogar",
+      "priority": 3
+    },
+    {
+      "keyword": "mejor estanteria metalica",
+      "category": "Hogar",
+      "priority": 3
+    },
+    {
+      "keyword": "mejor alfombrilla gaming XXL",
+      "category": "Gaming",
+      "priority": 3
+    },
+    {
+      "keyword": "mejor soporte para monitor",
+      "category": "Gaming",
+      "priority": 3
+    },
+    {
+      "keyword": "mejor capturadora de video",
+      "category": "Gaming",
+      "priority": 3
+    },
+    {
+      "keyword": "mejor esterilla de yoga",
+      "category": "Deporte",
+      "priority": 3
+    },
+    {
+      "keyword": "mejor banda elastica fitness",
+      "category": "Deporte",
+      "priority": 3
+    },
+    {
+      "keyword": "mejor rodillo de espuma",
+      "category": "Deporte",
+      "priority": 3
+    },
+    {
+      "keyword": "mejor botella de agua termica",
+      "category": "Deporte",
+      "priority": 3
+    },
+    {
+      "keyword": "mejor comba para crossfit",
+      "category": "Deporte",
+      "priority": 3
+    },
+    {
+      "keyword": "mejor maquina de afeitar mujer",
+      "category": "Belleza",
+      "priority": 3
+    },
+    {
+      "keyword": "mejor espejo de aumento con luz",
+      "category": "Belleza",
+      "priority": 3
+    },
+    {
+      "keyword": "mejor set de brochas maquillaje",
+      "category": "Belleza",
+      "priority": 3
+    },
+    {
+      "keyword": "mejor deshidratador de alimentos",
+      "category": "Hogar",
+      "priority": 3
+    },
+    {
+      "keyword": "mejor detector de humo",
+      "category": "Hogar",
+      "priority": 3
+    },
+    {
+      "keyword": "mejor tarjeta de sonido externa",
+      "category": "Tecnologia",
+      "priority": 3
+    },
+    {
+      "keyword": "mejor cargador inalambrico",
+      "category": "Tecnologia",
+      "priority": 3
+    },
+    {
+      "keyword": "mejor soporte para portatil",
+      "category": "Tecnologia",
+      "priority": 3
+    },
+    {
+      "keyword": "mejor USB wifi para PC",
+      "category": "Tecnologia",
+      "priority": 3
+    },
+    {
+      "keyword": "mejor lampara de escritorio LED",
+      "category": "Hogar",
+      "priority": 3
+    },
+    {
+      "keyword": "mejor organizador de escritorio",
+      "category": "Hogar",
+      "priority": 3
+    },
+    {
+      "keyword": "mejor alfombra de salon",
+      "category": "Hogar",
+      "priority": 3
+    },
+    {
+      "keyword": "mejor funda nordica",
+      "category": "Hogar",
+      "priority": 3
+    },
+    {
+      "keyword": "mejor wok antiadherente",
+      "category": "Hogar",
+      "priority": 3
+    },
+    {
+      "keyword": "mejor bascula de cocina digital",
       "category": "Hogar",
       "priority": 3
     }
@@ -251,6 +771,31 @@
       "keyword": "mejor aspirador escoba",
       "category": "Hogar",
       "priority": 2
+    },
+    {
+      "keyword": "mejor carro de bebe",
+      "category": "Bebe",
+      "priority": 1
+    },
+    {
+      "keyword": "mejor silla de coche bebe",
+      "category": "Bebe",
+      "priority": 1
+    },
+    {
+      "keyword": "mejor pienso para perro",
+      "category": "Mascotas",
+      "priority": 1
+    },
+    {
+      "keyword": "mejor pienso para gato",
+      "category": "Mascotas",
+      "priority": 1
+    },
+    {
+      "keyword": "mejor televisor 4k calidad precio",
+      "category": "Tecnologia",
+      "priority": 1
     }
   ]
 }
