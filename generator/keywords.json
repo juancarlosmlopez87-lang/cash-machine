@@ -1,21 +1,6 @@
 {
   "pending": [
     {
-      "keyword": "mejor cafetera express",
-      "category": "Hogar",
-      "priority": 2
-    },
-    {
-      "keyword": "mejor monitor para trabajar",
-      "category": "Tecnologia",
-      "priority": 2
-    },
-    {
-      "keyword": "mejor teclado mecanico",
-      "category": "Gaming",
-      "priority": 2
-    },
-    {
       "keyword": "mejor raton gaming",
       "category": "Gaming",
       "priority": 2
@@ -795,6 +780,21 @@
     {
       "keyword": "mejor tablet para estudiar",
       "category": "Tecnologia",
+      "priority": 2
+    },
+    {
+      "keyword": "mejor cafetera express",
+      "category": "Hogar",
+      "priority": 2
+    },
+    {
+      "keyword": "mejor monitor para trabajar",
+      "category": "Tecnologia",
+      "priority": 2
+    },
+    {
+      "keyword": "mejor teclado mecanico",
+      "category": "Gaming",
       "priority": 2
     }
   ]
