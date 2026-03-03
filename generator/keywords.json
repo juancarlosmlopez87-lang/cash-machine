@@ -1,31 +1,6 @@
 {
   "pending": [
     {
-      "keyword": "mejor monitor gaming 144hz",
-      "category": "Gaming",
-      "priority": 1
-    },
-    {
-      "keyword": "mejor tarjeta grafica calidad precio",
-      "category": "Gaming",
-      "priority": 1
-    },
-    {
-      "keyword": "mejor zapatillas running",
-      "category": "Deporte",
-      "priority": 1
-    },
-    {
-      "keyword": "mejor reloj GPS running",
-      "category": "Deporte",
-      "priority": 1
-    },
-    {
-      "keyword": "mejor crema hidratante facial",
-      "category": "Belleza",
-      "priority": 1
-    },
-    {
       "keyword": "mejor serum vitamina C",
       "category": "Belleza",
       "priority": 1
@@ -795,6 +770,31 @@
     {
       "keyword": "mejor consola gaming 2026",
       "category": "Gaming",
+      "priority": 1
+    },
+    {
+      "keyword": "mejor monitor gaming 144hz",
+      "category": "Gaming",
+      "priority": 1
+    },
+    {
+      "keyword": "mejor tarjeta grafica calidad precio",
+      "category": "Gaming",
+      "priority": 1
+    },
+    {
+      "keyword": "mejor zapatillas running",
+      "category": "Deporte",
+      "priority": 1
+    },
+    {
+      "keyword": "mejor reloj GPS running",
+      "category": "Deporte",
+      "priority": 1
+    },
+    {
+      "keyword": "mejor crema hidratante facial",
+      "category": "Belleza",
       "priority": 1
     }
   ]
