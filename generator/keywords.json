@@ -1,21 +1,6 @@
 {
   "pending": [
     {
-      "keyword": "mejor patin electrico para adultos",
-      "category": "Deporte",
-      "priority": 1
-    },
-    {
-      "keyword": "mejor bicicleta electrica",
-      "category": "Deporte",
-      "priority": 1
-    },
-    {
-      "keyword": "mejor tablet para estudiar",
-      "category": "Tecnologia",
-      "priority": 2
-    },
-    {
       "keyword": "mejor cafetera express",
       "category": "Hogar",
       "priority": 2
@@ -796,6 +781,21 @@
       "keyword": "mejor barra de sonido",
       "category": "Tecnologia",
       "priority": 1
+    },
+    {
+      "keyword": "mejor patin electrico para adultos",
+      "category": "Deporte",
+      "priority": 1
+    },
+    {
+      "keyword": "mejor bicicleta electrica",
+      "category": "Deporte",
+      "priority": 1
+    },
+    {
+      "keyword": "mejor tablet para estudiar",
+      "category": "Tecnologia",
+      "priority": 2
     }
   ]
 }
