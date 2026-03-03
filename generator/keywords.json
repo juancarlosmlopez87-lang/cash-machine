@@ -1,21 +1,6 @@
 {
   "pending": [
     {
-      "keyword": "mejor movil calidad precio",
-      "category": "Tecnologia",
-      "priority": 1
-    },
-    {
-      "keyword": "mejor auriculares bluetooth",
-      "category": "Tecnologia",
-      "priority": 2
-    },
-    {
-      "keyword": "mejor aspirador escoba",
-      "category": "Hogar",
-      "priority": 2
-    },
-    {
       "keyword": "mejor tablet para estudiar",
       "category": "Tecnologia",
       "priority": 2
@@ -251,6 +236,21 @@
       "keyword": "mejor colchon calidad precio",
       "category": "Hogar",
       "priority": 1
+    },
+    {
+      "keyword": "mejor movil calidad precio",
+      "category": "Tecnologia",
+      "priority": 1
+    },
+    {
+      "keyword": "mejor auriculares bluetooth",
+      "category": "Tecnologia",
+      "priority": 2
+    },
+    {
+      "keyword": "mejor aspirador escoba",
+      "category": "Hogar",
+      "priority": 2
     }
   ]
 }
