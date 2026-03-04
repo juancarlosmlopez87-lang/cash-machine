@@ -1,7 +1,9 @@
 import { notFound } from "next/navigation";
-import { getAllSlugs, getArticleBySlug } from "@/lib/articles";
+import { getAllArticles, getAllSlugs, getArticleBySlug } from "@/lib/articles";
 import { amazonLink, amazonImage } from "@/lib/amazon";
 import { SITE } from "@/lib/config";
+import ShareButtons from "@/components/ShareButtons";
+import NewsletterForm from "@/components/NewsletterForm";
 import type { Metadata } from "next";
 
 interface Props {
@@ -15,12 +17,15 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const article = getArticleBySlug(params.slug);
   if (!article) return {};
+  const articleUrl = `${SITE.url}/${article.slug}/`;
   return {
     title: article.metaTitle,
     description: article.metaDescription,
+    alternates: { canonical: `/${article.slug}/` },
     openGraph: {
       title: article.metaTitle,
       description: article.metaDescription,
+      url: articleUrl,
       type: "article",
       locale: SITE.locale,
     },
@@ -34,6 +39,8 @@ const catColor: Record<string, string> = {
   Gaming: "from-purple-500 to-pink-500",
   Deporte: "from-green-500 to-teal-500",
   Belleza: "from-pink-400 to-rose-500",
+  Bebe: "from-sky-400 to-blue-500",
+  Mascotas: "from-amber-500 to-yellow-500",
 };
 
 export default function ArticlePage({ params }: Props) {
@@ -41,9 +48,98 @@ export default function ArticlePage({ params }: Props) {
   if (!article) notFound();
 
   const gradient = catColor[article.category] || "from-gray-600 to-gray-800";
+  const articleUrl = `${SITE.url}/${article.slug}/`;
+
+  // Related articles: same category, exclude current, take 3
+  const allArticles = getAllArticles();
+  const relatedArticles = allArticles
+    .filter((a) => a.category === article.category && a.slug !== article.slug)
+    .slice(0, 3);
+
+  // JSON-LD: Article schema
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: article.title,
+    description: article.metaDescription,
+    author: {
+      "@type": "Organization",
+      name: SITE.name,
+      url: SITE.url,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: SITE.name,
+      url: SITE.url,
+    },
+    datePublished: article.createdAt,
+    dateModified: article.updatedAt,
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": articleUrl,
+    },
+  };
+
+  // JSON-LD: FAQ schema
+  const faqSchema =
+    article.faq.length > 0
+      ? {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: article.faq.map((item) => ({
+            "@type": "Question",
+            name: item.q,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: item.a,
+            },
+          })),
+        }
+      : null;
+
+  // JSON-LD: Product schemas (ItemList for comparison)
+  const productSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: article.title,
+    numberOfItems: article.products.length,
+    itemListElement: article.products.map((p, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      item: {
+        "@type": "Product",
+        name: p.name,
+        description: p.verdict,
+        url: amazonLink(p.asin),
+        offers: {
+          "@type": "Offer",
+          price: p.price.replace(/[^0-9.,]/g, "").replace(",", "."),
+          priceCurrency: "EUR",
+          availability: "https://schema.org/InStock",
+          url: amazonLink(p.asin),
+        },
+      },
+    })),
+  };
 
   return (
     <article>
+      {/* JSON-LD Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+      />
+
       {/* Hero banner */}
       <div className={`bg-gradient-to-r ${gradient} text-white py-16`}>
         <div className="max-w-3xl mx-auto px-4">
@@ -55,7 +151,7 @@ export default function ArticlePage({ params }: Props) {
           <h1 className="text-3xl md:text-4xl font-black leading-tight mb-4">
             {article.title}
           </h1>
-          <div className="flex items-center gap-4 text-sm text-white/60">
+          <div className="flex items-center gap-4 text-sm text-white/60 mb-5">
             <time>
               Actualizado:{" "}
               {new Date(article.updatedAt).toLocaleDateString("es-ES", {
@@ -67,6 +163,12 @@ export default function ArticlePage({ params }: Props) {
             <span>·</span>
             <span>{article.products.length} productos analizados</span>
           </div>
+          {/* Share buttons in hero */}
+          <ShareButtons
+            title={article.title}
+            url={articleUrl}
+            description={article.metaDescription}
+          />
         </div>
       </div>
 
@@ -220,6 +322,9 @@ export default function ArticlePage({ params }: Props) {
           </div>
         )}
 
+        {/* Newsletter between FAQ and Conclusion */}
+        <NewsletterForm />
+
         {/* Conclusion */}
         <div className="bg-gray-900 text-white rounded-xl p-8 mb-10">
           <h2 className="text-xl font-black mb-3">Nuestra recomendacion final</h2>
@@ -235,6 +340,62 @@ export default function ArticlePage({ params }: Props) {
             </a>
           )}
         </div>
+
+        {/* Share buttons after content */}
+        <div className="mb-10 p-6 bg-gray-50 rounded-xl border border-gray-200">
+          <p className="text-sm font-bold text-gray-700 mb-3">
+            Te ha sido util esta guia? Compartela:
+          </p>
+          <ShareButtons
+            title={article.title}
+            url={articleUrl}
+            description={article.metaDescription}
+          />
+        </div>
+
+        {/* Related Articles */}
+        {relatedArticles.length > 0 && (
+          <div className="mb-10">
+            <h2 className="text-2xl font-black mb-6">Tambien te puede interesar</h2>
+            <div className="grid md:grid-cols-3 gap-4">
+              {relatedArticles.map((related) => (
+                <a
+                  key={related.slug}
+                  href={`/${related.slug}/`}
+                  className="group block bg-white rounded-xl border border-gray-200 overflow-hidden hover:border-blue-400 hover:shadow-lg transition"
+                >
+                  <div className="bg-gray-50 p-4 flex items-center justify-center h-32 border-b">
+                    {related.products[0] && (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img
+                        src={amazonImage(related.products[0].asin)}
+                        alt={related.products[0].name}
+                        className="h-24 object-contain group-hover:scale-110 transition"
+                        loading="lazy"
+                      />
+                    )}
+                  </div>
+                  <div className="p-4">
+                    <h3 className="font-bold text-sm group-hover:text-blue-600 transition leading-tight mb-2">
+                      {related.title}
+                    </h3>
+                    <div className="flex items-center justify-between text-xs text-gray-400">
+                      <span>
+                        {new Date(related.updatedAt).toLocaleDateString("es-ES", {
+                          year: "numeric",
+                          month: "short",
+                        })}
+                      </span>
+                      <span className="font-bold text-blue-600">
+                        {related.products.length} productos
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </div>
+        )}
 
         {/* Disclaimer */}
         <div className="p-4 bg-gray-50 rounded-lg text-xs text-gray-400">
