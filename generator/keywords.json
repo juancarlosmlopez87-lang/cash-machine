@@ -1,21 +1,6 @@
 {
   "pending": [
     {
-      "keyword": "mejor camara de vigilancia",
-      "category": "Hogar",
-      "priority": 2
-    },
-    {
-      "keyword": "mejor almohada cervical",
-      "category": "Hogar",
-      "priority": 2
-    },
-    {
-      "keyword": "mejor escritorio elevable",
-      "category": "Hogar",
-      "priority": 2
-    },
-    {
       "keyword": "mejor cinta de correr",
       "category": "Deporte",
       "priority": 2
@@ -795,6 +780,21 @@
     {
       "keyword": "mejor kindle o ebook",
       "category": "Tecnologia",
+      "priority": 2
+    },
+    {
+      "keyword": "mejor camara de vigilancia",
+      "category": "Hogar",
+      "priority": 2
+    },
+    {
+      "keyword": "mejor almohada cervical",
+      "category": "Hogar",
+      "priority": 2
+    },
+    {
+      "keyword": "mejor escritorio elevable",
+      "category": "Hogar",
       "priority": 2
     }
   ]
