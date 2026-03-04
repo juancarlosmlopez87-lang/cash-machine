@@ -1,21 +1,6 @@
 {
   "pending": [
     {
-      "keyword": "mejor raton gaming",
-      "category": "Gaming",
-      "priority": 2
-    },
-    {
-      "keyword": "mejor patinete electrico",
-      "category": "Deporte",
-      "priority": 2
-    },
-    {
-      "keyword": "mejor bicicleta estatica",
-      "category": "Deporte",
-      "priority": 2
-    },
-    {
       "keyword": "mejor silla de oficina ergonomica",
       "category": "Hogar",
       "priority": 2
@@ -795,6 +780,21 @@
     {
       "keyword": "mejor teclado mecanico",
       "category": "Gaming",
+      "priority": 2
+    },
+    {
+      "keyword": "mejor raton gaming",
+      "category": "Gaming",
+      "priority": 2
+    },
+    {
+      "keyword": "mejor patinete electrico",
+      "category": "Deporte",
+      "priority": 2
+    },
+    {
+      "keyword": "mejor bicicleta estatica",
+      "category": "Deporte",
       "priority": 2
     }
   ]
