@@ -4,6 +4,8 @@ import { amazonLink, amazonImage } from "@/lib/amazon";
 import { SITE } from "@/lib/config";
 import ShareButtons from "@/components/ShareButtons";
 import NewsletterForm from "@/components/NewsletterForm";
+import ArticleAnimations from "@/components/ArticleAnimations";
+import StickyBuyCTA from "@/components/StickyBuyCTA";
 import type { Metadata } from "next";
 
 interface Props {
@@ -125,6 +127,16 @@ export default function ArticlePage({ params }: Props) {
 
   return (
     <article>
+      {/* Scroll animations + Sticky CTA */}
+      <ArticleAnimations />
+      {article.products[0] && (
+        <StickyBuyCTA
+          productName={article.products[0].name}
+          price={article.products[0].price}
+          amazonUrl={amazonLink(article.products[0].asin)}
+        />
+      )}
+
       {/* JSON-LD Structured Data */}
       <script
         type="application/ld+json"
@@ -252,7 +264,7 @@ export default function ArticlePage({ params }: Props) {
 
         {/* Detailed product cards */}
         {article.products.map((p, i) => (
-          <section key={p.asin} className="mb-10 bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm">
+          <section key={p.asin} className="mb-10 bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm scroll-reveal" style={{ transitionDelay: `${i * 0.08}s` }}>
             <div className="p-6">
               <div className="flex flex-col md:flex-row gap-6">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -303,7 +315,7 @@ export default function ArticlePage({ params }: Props) {
         ))}
 
         {/* Buying Guide */}
-        <div className="bg-blue-50 rounded-xl p-8 mb-10 border border-blue-100">
+        <div className="bg-blue-50 rounded-xl p-8 mb-10 border border-blue-100 scroll-reveal">
           <h2 className="text-2xl font-black mb-4 text-blue-900">Guia de compra</h2>
           <p className="text-gray-700 leading-relaxed">{article.buyingGuide}</p>
         </div>
@@ -361,11 +373,12 @@ export default function ArticlePage({ params }: Props) {
           <div className="mb-10">
             <h2 className="text-2xl font-black mb-6">Tambien te puede interesar</h2>
             <div className="grid md:grid-cols-3 gap-4">
-              {relatedArticles.map((related) => (
+              {relatedArticles.map((related, relIdx) => (
                 <a
                   key={related.slug}
                   href={`/${related.slug}/`}
-                  className="group block bg-white rounded-xl border border-gray-200 overflow-hidden hover:border-blue-400 hover:shadow-lg transition"
+                  className="group block bg-white rounded-xl border border-gray-200 overflow-hidden hover:border-blue-400 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 scroll-reveal"
+                  style={{ transitionDelay: `${relIdx * 0.1}s` }}
                 >
                   <div className="bg-gray-50 p-4 flex items-center justify-center h-32 border-b">
                     {related.products[0] && (

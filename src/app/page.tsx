@@ -1,6 +1,7 @@
 import { getAllArticles } from "@/lib/articles";
 import { amazonImage, amazonLink } from "@/lib/amazon";
 import { SITE } from "@/lib/config";
+import { AnimatedCounter, ScrollRevealInit, UpdatedBadge } from "@/components/HomeAnimations";
 
 const catEmoji: Record<string, string> = {
   Hogar: "🏠",
@@ -31,23 +32,33 @@ export default function Home() {
 
   return (
     <div>
+      {/* Scroll reveal observer */}
+      <ScrollRevealInit />
+
       {/* Hero */}
-      <div className="bg-gradient-to-br from-white via-blue-50 to-slate-50 py-20 border-b border-gray-100">
-        <div className="max-w-5xl mx-auto px-4 text-center">
-          <div className="text-sm font-bold text-blue-600 uppercase tracking-widest mb-3">
+      <div className="bg-gradient-to-br from-white via-blue-50 to-slate-50 py-20 border-b border-gray-100 relative overflow-hidden">
+        {/* Subtle floating background orbs */}
+        <div className="absolute top-[10%] left-[5%] w-[300px] h-[300px] rounded-full bg-blue-400/5 blur-[100px] animate-float pointer-events-none" />
+        <div className="absolute bottom-[10%] right-[8%] w-[250px] h-[250px] rounded-full bg-indigo-400/5 blur-[100px] animate-float pointer-events-none" style={{ animationDelay: "2s" }} />
+
+        <div className="max-w-5xl mx-auto px-4 text-center relative z-10">
+          <div className="text-sm font-bold text-blue-600 uppercase tracking-widest mb-3 animate-fade-in-up">
             Actualizado {new Date().toLocaleDateString("es-ES", { month: "long", year: "numeric" })}
           </div>
-          <h1 className="text-4xl md:text-6xl font-black mb-4 text-gray-900">
+          <h1 className="text-4xl md:text-6xl font-black mb-4 text-gray-900 animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
             Los mejores productos<br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
               comparados para ti
             </span>
           </h1>
-          <p className="text-xl text-gray-500 max-w-2xl mx-auto mb-8">
+          <p className="text-xl text-gray-500 max-w-2xl mx-auto mb-4 animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
             Analizamos cientos de opciones en Amazon para recomendarte solo lo mejor.
             Guias de compra honestas y actualizadas.
           </p>
-          <div className="flex flex-wrap justify-center gap-3">
+          <div className="animate-fade-in-up" style={{ animationDelay: "0.25s" }}>
+            <UpdatedBadge />
+          </div>
+          <div className="flex flex-wrap justify-center gap-3 mt-6 animate-fade-in-up" style={{ animationDelay: "0.35s" }}>
             {categories.map((cat) => (
               <a
                 key={cat}
@@ -63,7 +74,7 @@ export default function Home() {
 
       {/* Featured article */}
       {featured && (
-        <div className="max-w-5xl mx-auto px-4 -mt-10">
+        <div className="max-w-5xl mx-auto px-4 -mt-10 scroll-reveal">
           <a
             href={`/${featured.slug}/`}
             className="block bg-white rounded-2xl shadow-xl border border-gray-100 p-6 md:p-8 hover:shadow-2xl transition group"
@@ -103,7 +114,7 @@ export default function Home() {
           const catArticles = articles.filter((a) => a.category === cat);
           return (
             <section key={cat} id={cat.toLowerCase()} className="mb-16">
-              <div className="flex items-center gap-3 mb-8">
+              <div className="flex items-center gap-3 mb-8 scroll-reveal">
                 <span className="text-3xl">{catEmoji[cat] || "📦"}</span>
                 <h2 className="text-2xl font-black capitalize">{cat}</h2>
                 <div className="flex-1 h-px bg-gray-200" />
@@ -111,11 +122,11 @@ export default function Home() {
               </div>
 
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {catArticles.map((article) => (
+                {catArticles.map((article, idx) => (
                   <a
                     key={article.slug}
                     href={`/${article.slug}/`}
-                    className="group block bg-white rounded-xl border border-gray-200 overflow-hidden hover:border-blue-400 hover:shadow-xl transition"
+                    className={`group block bg-white rounded-xl border border-gray-200 overflow-hidden hover:border-blue-400 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 scroll-reveal stagger-${Math.min(idx + 1, 6)}`}
                   >
                     {/* Product image preview */}
                     <div className="bg-gray-50 p-4 flex items-center justify-center h-40 border-b">
@@ -124,7 +135,7 @@ export default function Home() {
                         <img
                           src={amazonImage(article.products[0].asin)}
                           alt={article.products[0].name}
-                          className="h-32 object-contain group-hover:scale-110 transition"
+                          className="h-32 object-contain group-hover:scale-110 transition duration-500"
                           loading="lazy"
                         />
                       )}
@@ -163,20 +174,20 @@ export default function Home() {
       <div className="bg-gray-50 border-t border-gray-200 py-12">
         <div className="max-w-5xl mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-            <div>
-              <div className="text-3xl font-black text-blue-600">{articles.length}+</div>
+            <div className="scroll-reveal stagger-1">
+              <div className="text-3xl font-black text-blue-600"><AnimatedCounter end={articles.length} suffix="+" /></div>
               <div className="text-sm text-gray-500">Guias de compra</div>
             </div>
-            <div>
-              <div className="text-3xl font-black text-blue-600">{articles.length * 7}+</div>
+            <div className="scroll-reveal stagger-2">
+              <div className="text-3xl font-black text-blue-600"><AnimatedCounter end={articles.length * 7} suffix="+" /></div>
               <div className="text-sm text-gray-500">Productos analizados</div>
             </div>
-            <div>
-              <div className="text-3xl font-black text-blue-600">2026</div>
+            <div className="scroll-reveal stagger-3">
+              <div className="text-3xl font-black text-blue-600"><AnimatedCounter end={2026} /></div>
               <div className="text-sm text-gray-500">Precios actualizados</div>
             </div>
-            <div>
-              <div className="text-3xl font-black text-blue-600">100%</div>
+            <div className="scroll-reveal stagger-4">
+              <div className="text-3xl font-black text-blue-600"><AnimatedCounter end={100} suffix="%" /></div>
               <div className="text-sm text-gray-500">Independiente</div>
             </div>
           </div>
