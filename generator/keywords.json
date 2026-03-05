@@ -1,6 +1,171 @@
 {
   "pending": [
     {
+      "keyword": "mejor termo electrico bajo consumo",
+      "category": "Hogar",
+      "priority": 1
+    },
+    {
+      "keyword": "mejor sofa cama calidad precio",
+      "category": "Hogar",
+      "priority": 1
+    },
+    {
+      "keyword": "mejor cocina de induccion portatil",
+      "category": "Hogar",
+      "priority": 1
+    },
+    {
+      "keyword": "mejor portatil gaming barato",
+      "category": "Gaming",
+      "priority": 1
+    },
+    {
+      "keyword": "mejor PC gaming montado calidad precio",
+      "category": "Gaming",
+      "priority": 1
+    },
+    {
+      "keyword": "mejor monitor 4K para diseño",
+      "category": "Tecnologia",
+      "priority": 1
+    },
+    {
+      "keyword": "mejor iPad o tablet premium",
+      "category": "Tecnologia",
+      "priority": 1
+    },
+    {
+      "keyword": "mejor iPhone vs Samsung vs Xiaomi 2026",
+      "category": "Tecnologia",
+      "priority": 1
+    },
+    {
+      "keyword": "mejor portatil para trabajar desde casa",
+      "category": "Tecnologia",
+      "priority": 1
+    },
+    {
+      "keyword": "mejor camara deportiva GoPro alternativa",
+      "category": "Tecnologia",
+      "priority": 1
+    },
+    {
+      "keyword": "mejor proyector home cinema 4K",
+      "category": "Tecnologia",
+      "priority": 1
+    },
+    {
+      "keyword": "mejor ordenador todo en uno",
+      "category": "Tecnologia",
+      "priority": 1
+    },
+    {
+      "keyword": "mejor coche electrico niños",
+      "category": "Bebe",
+      "priority": 1
+    },
+    {
+      "keyword": "mejor silla auto grupo 2 3 isofix",
+      "category": "Bebe",
+      "priority": 1
+    },
+    {
+      "keyword": "mejor colchon cuna antiahogo",
+      "category": "Bebe",
+      "priority": 1
+    },
+    {
+      "keyword": "mejor Dyson Airwrap vs Shark vs Revlon",
+      "category": "Belleza",
+      "priority": 1
+    },
+    {
+      "keyword": "mejor maquina depilacion laser casa",
+      "category": "Belleza",
+      "priority": 1
+    },
+    {
+      "keyword": "mejor aparato de radiofrecuencia facial",
+      "category": "Belleza",
+      "priority": 1
+    },
+    {
+      "keyword": "mejor retinol serum antiedad",
+      "category": "Belleza",
+      "priority": 1
+    },
+    {
+      "keyword": "mejor bicicleta electrica plegable",
+      "category": "Deporte",
+      "priority": 1
+    },
+    {
+      "keyword": "mejor cinta de correr plegable silenciosa",
+      "category": "Deporte",
+      "priority": 1
+    },
+    {
+      "keyword": "mejor multiestacion musculacion casa",
+      "category": "Deporte",
+      "priority": 1
+    },
+    {
+      "keyword": "mejor reloj Garmin vs Apple Watch vs Samsung",
+      "category": "Deporte",
+      "priority": 1
+    },
+    {
+      "keyword": "mejor cortacesped robot automatico",
+      "category": "Hogar",
+      "priority": 1
+    },
+    {
+      "keyword": "mejor herramienta multiusos Dremel alternativa",
+      "category": "Hogar",
+      "priority": 1
+    },
+    {
+      "keyword": "mejor taladro percutor bateria",
+      "category": "Hogar",
+      "priority": 1
+    },
+    {
+      "keyword": "mejor set herramientas electricas profesional",
+      "category": "Hogar",
+      "priority": 1
+    },
+    {
+      "keyword": "mejor barbacoa de gas",
+      "category": "Hogar",
+      "priority": 1
+    },
+    {
+      "keyword": "mejor piscina desmontable",
+      "category": "Hogar",
+      "priority": 1
+    },
+    {
+      "keyword": "mejor robot cortacesped barato",
+      "category": "Hogar",
+      "priority": 1
+    },
+    {
+      "keyword": "mejor GPS para perro collar localizador",
+      "category": "Mascotas",
+      "priority": 1
+    },
+    {
+      "keyword": "mejor aspirador pelo mascotas",
+      "category": "Mascotas",
+      "priority": 1
+    },
+    {
+      "keyword": "mejor collar antiladridos perro",
+      "category": "Mascotas",
+      "priority": 1
+    },
+    {
       "keyword": "mejor cinta de correr",
       "category": "Deporte",
       "priority": 2
@@ -796,6 +961,31 @@
       "keyword": "mejor escritorio elevable",
       "category": "Hogar",
       "priority": 2
+    },
+    {
+      "keyword": "mejor cafetera superautomatica",
+      "category": "Hogar",
+      "priority": 1
+    },
+    {
+      "keyword": "mejor lavavajillas integrable",
+      "category": "Hogar",
+      "priority": 1
+    },
+    {
+      "keyword": "mejor secadora de ropa calidad precio",
+      "category": "Hogar",
+      "priority": 1
+    },
+    {
+      "keyword": "mejor aspirador Dyson vs Xiaomi vs Cecotec",
+      "category": "Hogar",
+      "priority": 1
+    },
+    {
+      "keyword": "mejor frigorifico americano",
+      "category": "Hogar",
+      "priority": 1
     }
   ]
 }
