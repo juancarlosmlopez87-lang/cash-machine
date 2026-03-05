@@ -35,22 +35,22 @@ export default function NewsletterForm() {
   };
 
   return (
-    <div className="bg-gray-900 rounded-xl p-8 my-10">
+    <div className="bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-100 rounded-xl p-8 my-10">
       <div className="max-w-xl mx-auto text-center">
-        <div className="text-amber-400 font-black text-sm uppercase tracking-widest mb-2">
+        <div className="text-blue-600 font-black text-sm uppercase tracking-widest mb-2">
           Newsletter
         </div>
-        <h3 className="text-xl md:text-2xl font-black text-white mb-2">
+        <h3 className="text-xl md:text-2xl font-black text-gray-900 mb-2">
           Recibe las mejores ofertas en tu email
         </h3>
-        <p className="text-gray-400 text-sm mb-6">
+        <p className="text-gray-500 text-sm mb-6">
           Cada semana te enviamos las mejores ofertas y comparativas de Amazon.
           Sin spam, solo chollos.
         </p>
 
         {status === "success" ? (
-          <div className="bg-green-900/50 border border-green-500/30 rounded-lg p-4">
-            <p className="text-green-400 font-bold">{message}</p>
+          <div className="bg-green-50 border border-green-200 rounded-lg p-4">
+            <p className="text-green-700 font-bold">{message}</p>
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3">
@@ -60,12 +60,12 @@ export default function NewsletterForm() {
               placeholder="tu@email.com"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="flex-1 px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:border-amber-400 focus:ring-1 focus:ring-amber-400 transition"
+              className="flex-1 px-4 py-3 rounded-lg bg-white border border-gray-200 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition shadow-sm"
             />
             <button
               type="submit"
               disabled={status === "loading"}
-              className="bg-amber-400 hover:bg-amber-500 disabled:opacity-50 text-black font-bold px-6 py-3 rounded-lg transition shrink-0"
+              className="bg-blue-600 hover:bg-blue-700 disabled:opacity-50 text-white font-bold px-6 py-3 rounded-lg transition shrink-0 shadow-sm"
             >
               {status === "loading" ? "Enviando..." : "Suscribirme"}
             </button>
@@ -73,10 +73,10 @@ export default function NewsletterForm() {
         )}
 
         {status === "error" && (
-          <p className="text-red-400 text-sm mt-3">{message}</p>
+          <p className="text-red-600 text-sm mt-3">{message}</p>
         )}
 
-        <p className="text-gray-600 text-xs mt-4">
+        <p className="text-gray-400 text-xs mt-4">
           Puedes darte de baja en cualquier momento. Respetamos tu privacidad.
         </p>
       </div>

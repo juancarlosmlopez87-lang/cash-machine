@@ -32,21 +32,21 @@ if ! grep -q "GROQ_API_KEY" ~/.bashrc; then
     echo "  source ~/.bashrc"
 fi
 
-# 4. Configurar cron para ejecutar 2 veces al dia (6:00 y 18:00)
-CRON_CMD="0 6,18 * * * cd $INSTALL_DIR/generator && /usr/bin/python3 generate.py >> /var/log/cash-machine.log 2>&1"
+# 4. Configurar cron para ejecutar 3 veces al dia (6:00, 14:00, 22:00)
+CRON_CMD="0 6,14,22 * * * cd $INSTALL_DIR/generator && /usr/bin/python3 generate.py >> /var/log/cash-machine.log 2>&1"
 
 if crontab -l 2>/dev/null | grep -q "cash-machine"; then
     echo "Cron ya configurado"
 else
     (crontab -l 2>/dev/null; echo "$CRON_CMD") | crontab -
-    echo "Cron instalado: genera articulos a las 6:00 y 18:00 cada dia"
+    echo "Cron instalado: genera articulos a las 6:00, 14:00 y 22:00 cada dia"
 fi
 
 echo ""
 echo "=== Setup completo ==="
 echo "  Directorio: $INSTALL_DIR"
 echo "  Log: /var/log/cash-machine.log"
-echo "  Cron: 2 ejecuciones/dia (6 articulos/dia)"
+echo "  Cron: 3 ejecuciones/dia (15 articulos/dia)"
 echo ""
 echo "Para ejecutar manualmente:"
 echo "  cd $INSTALL_DIR/generator && python3 generate.py"

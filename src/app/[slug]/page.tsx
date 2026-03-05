@@ -62,6 +62,7 @@ export default function ArticlePage({ params }: Props) {
     "@type": "Article",
     headline: article.title,
     description: article.metaDescription,
+    image: amazonImage(article.products[0]?.asin || ""),
     author: {
       "@type": "Organization",
       name: SITE.name,
@@ -141,17 +142,17 @@ export default function ArticlePage({ params }: Props) {
       />
 
       {/* Hero banner */}
-      <div className={`bg-gradient-to-r ${gradient} text-white py-16`}>
+      <div className="bg-gradient-to-br from-white via-slate-50 to-blue-50 border-b border-gray-200 py-16">
         <div className="max-w-3xl mx-auto px-4">
-          <nav className="text-sm text-white/60 mb-4">
-            <a href="/" className="hover:text-white">Inicio</a>
+          <nav className="text-sm text-gray-400 mb-4">
+            <a href="/" className="hover:text-blue-600 transition">Inicio</a>
             <span className="mx-2">/</span>
-            <span className="capitalize">{article.category}</span>
+            <span className={`font-semibold capitalize text-transparent bg-clip-text bg-gradient-to-r ${gradient}`}>{article.category}</span>
           </nav>
-          <h1 className="text-3xl md:text-4xl font-black leading-tight mb-4">
+          <h1 className="text-3xl md:text-4xl font-black leading-tight mb-4 text-gray-900">
             {article.title}
           </h1>
-          <div className="flex items-center gap-4 text-sm text-white/60 mb-5">
+          <div className="flex items-center gap-4 text-sm text-gray-400 mb-5">
             <time>
               Actualizado:{" "}
               {new Date(article.updatedAt).toLocaleDateString("es-ES", {
@@ -190,7 +191,9 @@ export default function ArticlePage({ params }: Props) {
                 src={amazonImage(article.products[0].asin)}
                 alt={article.products[0].name}
                 className="w-40 h-40 object-contain"
-                loading="lazy"
+                loading="eager"
+                width={160}
+                height={160}
               />
               <div className="flex-1">
                 <h2 className="text-xl font-black mb-1">{article.products[0].name}</h2>
@@ -211,8 +214,8 @@ export default function ArticlePage({ params }: Props) {
 
         {/* Quick comparison table */}
         <div className="bg-white rounded-xl border border-gray-200 overflow-hidden mb-10 shadow-sm">
-          <div className="bg-gray-900 text-white px-6 py-3">
-            <h2 className="font-bold">Comparativa rapida — Top {article.products.length}</h2>
+          <div className="bg-slate-50 border-b border-gray-200 px-6 py-3">
+            <h2 className="font-bold text-gray-900">Comparativa rapida — Top {article.products.length}</h2>
           </div>
           <div className="divide-y">
             {article.products.map((p, i) => (
@@ -326,15 +329,15 @@ export default function ArticlePage({ params }: Props) {
         <NewsletterForm />
 
         {/* Conclusion */}
-        <div className="bg-gray-900 text-white rounded-xl p-8 mb-10">
-          <h2 className="text-xl font-black mb-3">Nuestra recomendacion final</h2>
-          <p className="text-gray-300 leading-relaxed">{article.conclusion}</p>
+        <div className="bg-gradient-to-br from-slate-50 to-blue-50 border border-gray-200 rounded-xl p-8 mb-10">
+          <h2 className="text-xl font-black mb-3 text-gray-900">Nuestra recomendacion final</h2>
+          <p className="text-gray-600 leading-relaxed">{article.conclusion}</p>
           {article.products[0] && (
             <a
               href={amazonLink(article.products[0].asin)}
               target="_blank"
               rel="nofollow noopener sponsored"
-              className="inline-block bg-amber-400 hover:bg-amber-500 text-black font-bold px-8 py-3 rounded-lg mt-4 transition"
+              className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold px-8 py-3 rounded-lg mt-4 transition shadow-sm"
             >
               Ver {article.products[0].name} en Amazon
             </a>

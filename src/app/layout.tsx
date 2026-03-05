@@ -3,11 +3,13 @@ import { SITE } from "@/lib/config";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE.url),
   title: {
     default: `${SITE.name} — ${SITE.tagline}`,
     template: `%s | ${SITE.name}`,
   },
   description: SITE.description,
+  alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     locale: SITE.locale,
@@ -24,6 +26,8 @@ export default function RootLayout({
   return (
     <html lang={SITE.lang}>
       <head>
+        <link rel="preconnect" href="https://ws-eu.amazon-adsystem.com" />
+        <link rel="preconnect" href="https://m.media-amazon.com" />
         {SITE.adsenseId && (
           <script
             async
@@ -43,7 +47,11 @@ export default function RootLayout({
               <a href="/" className="hover:text-gray-900">Inicio</a>
               <a href="/#tecnologia" className="hover:text-gray-900">Tecnologia</a>
               <a href="/#hogar" className="hover:text-gray-900">Hogar</a>
+              <a href="/#gaming" className="hover:text-gray-900">Gaming</a>
               <a href="/#deporte" className="hover:text-gray-900">Deporte</a>
+              <a href="/#belleza" className="hover:text-gray-900">Belleza</a>
+              <a href="/#bebe" className="hover:text-gray-900">Bebe</a>
+              <a href="/#mascotas" className="hover:text-gray-900">Mascotas</a>
             </nav>
           </div>
         </header>

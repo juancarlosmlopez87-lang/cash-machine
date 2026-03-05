@@ -8,6 +8,8 @@ const catEmoji: Record<string, string> = {
   Gaming: "🎮",
   Deporte: "⚡",
   Belleza: "✨",
+  Bebe: "👶",
+  Mascotas: "🐾",
 };
 
 const catGradient: Record<string, string> = {
@@ -16,6 +18,8 @@ const catGradient: Record<string, string> = {
   Gaming: "from-purple-500 to-pink-500",
   Deporte: "from-green-500 to-teal-500",
   Belleza: "from-pink-400 to-rose-500",
+  Bebe: "from-sky-400 to-blue-500",
+  Mascotas: "from-amber-500 to-yellow-500",
 };
 
 export default function Home() {
@@ -28,18 +32,18 @@ export default function Home() {
   return (
     <div>
       {/* Hero */}
-      <div className="bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 text-white py-20">
+      <div className="bg-gradient-to-br from-white via-blue-50 to-slate-50 py-20 border-b border-gray-100">
         <div className="max-w-5xl mx-auto px-4 text-center">
-          <div className="text-sm font-bold text-blue-400 uppercase tracking-widest mb-3">
+          <div className="text-sm font-bold text-blue-600 uppercase tracking-widest mb-3">
             Actualizado {new Date().toLocaleDateString("es-ES", { month: "long", year: "numeric" })}
           </div>
-          <h1 className="text-4xl md:text-6xl font-black mb-4">
+          <h1 className="text-4xl md:text-6xl font-black mb-4 text-gray-900">
             Los mejores productos<br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-400">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
               comparados para ti
             </span>
           </h1>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto mb-8">
+          <p className="text-xl text-gray-500 max-w-2xl mx-auto mb-8">
             Analizamos cientos de opciones en Amazon para recomendarte solo lo mejor.
             Guias de compra honestas y actualizadas.
           </p>
@@ -48,7 +52,7 @@ export default function Home() {
               <a
                 key={cat}
                 href={`#${cat.toLowerCase()}`}
-                className={`bg-gradient-to-r ${catGradient[cat] || "from-gray-500 to-gray-600"} text-white font-bold px-5 py-2 rounded-full text-sm hover:scale-105 transition`}
+                className={`bg-gradient-to-r ${catGradient[cat] || "from-gray-500 to-gray-600"} text-white font-bold px-5 py-2 rounded-full text-sm hover:scale-105 transition shadow-sm`}
               >
                 {catEmoji[cat] || "📦"} {cat}
               </a>
@@ -71,7 +75,9 @@ export default function Home() {
                   src={amazonImage(featured.products[0].asin)}
                   alt={featured.products[0].name}
                   className="w-32 h-32 object-contain"
-                  loading="lazy"
+                  loading="eager"
+                  width={128}
+                  height={128}
                 />
               )}
               <div className="flex-1 text-center md:text-left">

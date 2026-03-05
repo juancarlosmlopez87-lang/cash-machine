@@ -7,7 +7,7 @@ GROQ_MODEL = "llama-3.3-70b-versatile"
 ARTICLES_DIR = os.path.join(os.path.dirname(__file__), "..", "content", "articles")
 
 # Cuántos artículos generar por ejecución
-ARTICLES_PER_RUN = 3
+ARTICLES_PER_RUN = 5
 
 # Tag de afiliado Amazon.es
 AMAZON_TAG = "topactual-21"

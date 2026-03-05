@@ -10,12 +10,28 @@ import os
 import re
 import subprocess
 import sys
+import time
 from datetime import datetime, timezone
 from pathlib import Path
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
+import requests
 from groq import Groq
 
 from config import GROQ_API_KEY, GROQ_MODEL, ARTICLES_DIR, ARTICLES_PER_RUN
+
+# Telegram alerts (bot maestro en VPS)
+TELEGRAM_BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN", "8451701836:AAHnoYbzI14jnyCVtfx05iuA_CfkYKwPtX8")
+TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHANNEL_ID", "1802913178")
+
+def _tg_alert(title: str, msg: str):
+    try:
+        requests.post(f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage",
+            json={"chat_id": TELEGRAM_CHAT_ID, "parse_mode": "HTML",
+                  "text": f"\U0001F4DD <b>TOPACTUAL</b> — {title}\n\n{msg}"},
+            timeout=5)
+    except Exception:
+        pass
 
 # ── Setup ────────────────────────────────────────────────────
 
@@ -107,56 +123,63 @@ IMPORTANTE:
 
 # ── Generar un artículo ─────────────────────────────────────
 
-def generate_article(client: Groq, keyword: str, category: str) -> dict | None:
+def generate_article(client: Groq, keyword: str, category: str, max_retries: int = 3) -> dict | None:
     prompt = build_user_prompt(keyword, category)
 
-    try:
-        response = client.chat.completions.create(
-            model=GROQ_MODEL,
-            messages=[
-                {"role": "system", "content": SYSTEM_PROMPT},
-                {"role": "user", "content": prompt},
-            ],
-            temperature=0.7,
-            max_tokens=4000,
-            response_format={"type": "json_object"},
-        )
+    for attempt in range(max_retries):
+        try:
+            response = client.chat.completions.create(
+                model=GROQ_MODEL,
+                messages=[
+                    {"role": "system", "content": SYSTEM_PROMPT},
+                    {"role": "user", "content": prompt},
+                ],
+                temperature=0.7,
+                max_tokens=4000,
+                response_format={"type": "json_object"},
+            )
 
-        text = response.choices[0].message.content or ""
-        article = json.loads(text)
+            text = response.choices[0].message.content or ""
+            article = json.loads(text)
 
-        # Validar campos requeridos
-        required = ["title", "metaTitle", "metaDescription", "keyword", "intro", "products", "buyingGuide", "faq", "conclusion"]
-        for field in required:
-            if field not in article:
-                print(f"  [!] Falta campo: {field}")
+            # Validar campos requeridos
+            required = ["title", "metaTitle", "metaDescription", "keyword", "intro", "products", "buyingGuide", "faq", "conclusion"]
+            for field in required:
+                if field not in article:
+                    print(f"  [!] Falta campo: {field}")
+                    return None
+
+            if len(article["products"]) < 3:
+                print(f"  [!] Solo {len(article['products'])} productos (minimo 3)")
                 return None
 
-        if len(article["products"]) < 3:
-            print(f"  [!] Solo {len(article['products'])} productos (minimo 3)")
-            return None
+            # Añadir metadatos
+            now = datetime.now(timezone.utc).isoformat()
+            article["slug"] = slugify(keyword)
+            article["category"] = category
+            article["createdAt"] = now
+            article["updatedAt"] = now
 
-        # Añadir metadatos
-        now = datetime.now(timezone.utc).isoformat()
-        article["slug"] = slugify(keyword)
-        article["category"] = category
-        article["createdAt"] = now
-        article["updatedAt"] = now
+            tokens = response.usage
+            cost = 0
+            if tokens:
+                cost = (tokens.prompt_tokens * 0.05 + tokens.completion_tokens * 0.08) / 1_000_000
+            print(f"  Tokens: {tokens.total_tokens if tokens else '?'} | Coste: ${cost:.4f}")
 
-        tokens = response.usage
-        cost = 0
-        if tokens:
-            cost = (tokens.prompt_tokens * 0.05 + tokens.completion_tokens * 0.08) / 1_000_000
-        print(f"  Tokens: {tokens.total_tokens if tokens else '?'} | Coste: ${cost:.4f}")
+            return article
 
-        return article
+        except json.JSONDecodeError as e:
+            print(f"  [!] JSON invalido (intento {attempt+1}/{max_retries}): {e}")
+            if attempt < max_retries - 1:
+                time.sleep(2 ** attempt)
+            continue
+        except Exception as e:
+            print(f"  [!] Error Groq (intento {attempt+1}/{max_retries}): {e}")
+            if attempt < max_retries - 1:
+                time.sleep(2 ** attempt)
+            continue
 
-    except json.JSONDecodeError as e:
-        print(f"  [!] JSON invalido de Groq: {e}")
-        return None
-    except Exception as e:
-        print(f"  [!] Error Groq: {e}")
-        return None
+    return None
 
 
 # ── Guardar artículo ────────────────────────────────────────
@@ -222,33 +245,43 @@ def main():
     print(f"  Keywords pendientes: {len(pending)}")
     print(f"{'='*60}\n")
 
-    for i in range(to_generate):
-        kw = pending[0]  # Siempre el primero (ya ordenado por prioridad)
+    # Pre-filter already existing articles
+    batch = []
+    while len(batch) < to_generate and pending:
+        kw = pending.pop(0)
         keyword = kw["keyword"]
-        category = kw.get("category", "General")
-
-        # Saltar si ya existe
         slug = slugify(keyword)
         filepath = os.path.join(ARTICLES_DIR, f"{slug}.json")
         if os.path.exists(filepath):
-            print(f"[{i+1}/{to_generate}] SKIP (ya existe): {keyword}")
-            pending.pop(0)
+            print(f"  SKIP (ya existe): {keyword}")
             done.append(kw)
             continue
+        batch.append(kw)
 
-        print(f"[{i+1}/{to_generate}] Generando: {keyword} ({category})...")
+    # Generate articles in parallel (3 concurrent, safe for Groq rate limits)
+    max_workers = min(3, len(batch))
+    if max_workers > 0:
+        def _gen(idx_kw):
+            idx, kw = idx_kw
+            keyword = kw["keyword"]
+            category = kw.get("category", "General")
+            print(f"[{idx+1}/{len(batch)}] Generando: {keyword} ({category})...")
+            article = generate_article(client, keyword, category)
+            return kw, article
 
-        article = generate_article(client, keyword, category)
-        if article:
-            save_article(article)
-            generated.append(keyword)
-            print(f"  OK: {article['title']}")
-        else:
-            print(f"  FAIL: {keyword}")
-
-        # Mover de pending a done
-        pending.pop(0)
-        done.append(kw)
+        with ThreadPoolExecutor(max_workers=max_workers) as executor:
+            futures = {executor.submit(_gen, (i, kw)): kw for i, kw in enumerate(batch)}
+            for future in as_completed(futures):
+                kw, article = future.result()
+                if article:
+                    done.append(kw)
+                    save_article(article)
+                    generated.append(kw["keyword"])
+                    print(f"  OK: {article['title']}")
+                else:
+                    # Failed — put back in pending so it can be retried next run
+                    pending.append(kw)
+                    print(f"  FAIL (will retry): {kw['keyword']}")
 
     # Guardar estado de keywords
     kw_data["pending"] = pending
@@ -263,6 +296,13 @@ def main():
     # Auto push si se generó algo
     if generated:
         git_push(generated)
+        _tg_alert("Articulos generados",
+            f"Generados: {len(generated)}/{to_generate}\n"
+            f"Titulos: {', '.join(generated[:3])}{'...' if len(generated) > 3 else ''}\n"
+            f"Pendientes: {len(pending)}")
+    elif to_generate > 0:
+        _tg_alert("Sin articulos",
+            f"0/{to_generate} generados. {len(pending)} pendientes.")
 
 
 if __name__ == "__main__":
